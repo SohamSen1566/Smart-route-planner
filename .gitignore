@@ -1,0 +1,71 @@
+# =========================
+# OS / Editor Files
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# C++ Build Artifacts
+# =========================
+cpp_backend/build/
+cpp_backend/bin/
+cpp_backend/CMakeFiles/
+cpp_backend/CMakeCache.txt
+cpp_backend/Makefile
+cpp_backend/*.out
+cpp_backend/*.exe
+cpp_backend/*.obj
+cpp_backend/*.o
+cpp_backend/*.log
+
+# =========================
+# Node.js Dependencies
+# =========================
+server_backend/node_modules/
+server_backend/package-lock.json
+.env
+.env.local
+
+# =========================
+# Logs and Temp Files
+# =========================
+*.log
+logs/
+temp/
+*.tmp
+
+# =========================
+# Frontend (optional)
+# =========================
+web_frontend/dist/
+web_frontend/node_modules/
+web_frontend/.cache/
+web_frontend/.parcel-cache/
+web_frontend/.next/
+web_frontend/build/
+web_frontend/package-lock.json
+
+# =========================
+# System Files
+# =========================
+*.bak
+*.old
+*.orig
+
+# =========================
+# Generated Data Files
+# =========================
+cpp_backend/data/*.bin
+cpp_backend/data/*.dat
+cpp_backend/data/*.csv
+cpp_backend/data/*.json
+cpp_backend/data/*.db
+
+# =========================
+# Backups
+# =========================
+*~
