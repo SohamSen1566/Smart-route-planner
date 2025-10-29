@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Route Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🚗 Smart Route Planner</h1>
+    <p>Find the fastest route between two locations</p>
+  </header>
+
+  <main>
+    <section class="input-section">
+      <label for="start">Start Node:</label>
+      <input type="text" id="start" placeholder="e.g. 1" />
+
+      <label for="end">End Node:</label>
+      <input type="text" id="end" placeholder="e.g. 5" />
+
+      <button onclick="findRoute()">Find Route</button>
+    </section>
+
+    <section class="output-section">
+      <h2>Shortest Path:</h2>
+      <pre id="output">No route calculated yet.</pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Smart Route Planner | Built with C++ + Node.js</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
