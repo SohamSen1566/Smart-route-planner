@@ -5,6 +5,7 @@ string Utils::toLower(string s) {
     return s;
 }
 
+
 void Utils::printDivider() {
     cout << "----------------------------------------\n";
 }
