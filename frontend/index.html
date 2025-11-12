@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Route Planner</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART ROUTE PLANNER</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🚗 Smart Route Planner</h1>
-    <p>Find the fastest route between two locations</p>
-  </header>
+    <header>
+        <h1>🚗 SMART ROUTE PLANNER</h1>
+    </header>
 
-  <main>
-    <section class="input-section">
-      <label for="start">Start Node:</label>
-      <input type="text" id="start" placeholder="e.g. 1" />
+    <main>
+        <div class="input-section">
+            <input type="text" id="source" placeholder="Enter Source City">
+            <input type="text" id="destination" placeholder="Enter Destination City">
+            <button onclick="findRoute()">Find Route</button>
+        </div>
 
-      <label for="end">End Node:</label>
-      <input type="text" id="end" placeholder="e.g. 5" />
+        <div class="map-container">
+            <div id="map">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/India_map_blank.svg" alt="India Map" id="india-map">
+                <canvas id="route-canvas"></canvas>
+            </div>
+        </div>
 
-      <button onclick="findRoute()">Find Route</button>
-    </section>
+        <div class="output" id="output"></div>
+    </main>
 
-    <section class="output-section">
-      <h2>Shortest Path:</h2>
-      <pre id="output">No route calculated yet.</pre>
-    </section>
-  </main>
+    <footer>
+        <p>Made with ❤ for DSA Project</p>
+    </footer>
 
-  <footer>
-    <p>© 2025 Smart Route Planner | Built with C++ + Node.js</p>
-  </footer>
-
-  <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
