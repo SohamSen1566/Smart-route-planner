@@ -1,32 +1,42 @@
 #include "dijkstra.hpp"
-#include<bits/stdc++.h>
+using namespace std;
 
-std::vector<int> Dijkstra::shortestPath(Graph &g, int start, int end) {
-    std::unordered_map<int, double> dist;
-    std::unordered_map<int, int> parent;
-    auto cmp = [&](int left, int right) { return dist[left] > dist[right]; };
-    std::priority_queue<int, std::vector<int>, decltype(cmp)> pq(cmp);
+pair<vector<double>, unordered_map<int, int>> Dijkstra::shortestPath(Graph &g, int start) {
+    int n = g.size();
 
-    for (auto node : g.getAllNodes()) dist[node] = 1e9;
-    dist[start] = 0;
-    pq.push(start);
+    // Initialize distances
+    vector<double> dist(n, numeric_limits<double>::infinity());
+    unordered_map<int, int> prev;
+    dist[start] = 0.0;
+
+    // Min-heap priority queue: (distance, node)
+    typedef pair<double, int> PDI;
+    priority_queue<PDI, vector<PDI>, greater<PDI>> pq;
+    pq.push(make_pair(0.0, start));
 
     while (!pq.empty()) {
-        int u = pq.top(); pq.pop();
-        for (auto edge : g.getNeighbors(u)) {
-            int v = edge.dest;
-            double weight = edge.weight;
-            if (dist[u] + weight < dist[v]) {
-                dist[v] = dist[u] + weight;
-                parent[v] = u;
-                pq.push(v);
+        PDI current = pq.top();
+        pq.pop();
+
+        double d = current.first;
+        int u = current.second;
+
+        if (d > dist[u])
+            continue;
+
+        // Explore neighbors
+        const vector<pair<int, double>>& neighbors = g.getNeighbors(u);
+        for (size_t i = 0; i < neighbors.size(); ++i) {
+            int v = neighbors[i].first;
+            double w = neighbors[i].second;
+
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                prev[v] = u;
+                pq.push(make_pair(dist[v], v));
             }
         }
     }
 
-    std::vector<int> path;
-    for (int at = end; at != start; at = parent[at]) path.push_back(at);
-    path.push_back(start);
-    std::reverse(path.begin(), path.end());
-    return path;
+    return make_pair(dist, prev);
 }
