@@ -1,4 +1,3 @@
-//aditya
 #include "utils.hpp"
 
 string Utils::toLower(string s) {
