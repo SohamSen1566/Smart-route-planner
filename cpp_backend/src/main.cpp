@@ -3,6 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+<<<<<<< HEAD
 // 🔹 Function to load all routes from a CSV file
 void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
     ifstream file(filename);
@@ -12,6 +13,13 @@ void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
 =======
         cerr << "❌ Error: Could not open file " << filename << endl;
 >>>>>>> 24c85d5 (updated the main file and integrated the csv data file into the project structure.)
+=======
+// Function to load all routes from a CSV file
+void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
+    ifstream file(filename);
+    if (!file.is_open()) {
+        cout << "Could not open file: " << filename << endl;
+>>>>>>> 8b4ad22 (Updated main)
         return;
     }
 
@@ -30,10 +38,14 @@ void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
             rm.addRoute(from, to, distance);
         } catch (...) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             cerr << "Warning: Skipped invalid line: " << line << endl;
 =======
             cerr << "⚠ Warning: Skipped invalid line: " << line << endl;
 >>>>>>> 24c85d5 (updated the main file and integrated the csv data file into the project structure.)
+=======
+            cout << "Skipped invalid line: " << line << endl;
+>>>>>>> 8b4ad22 (Updated main)
         }
     }
 
@@ -60,10 +72,14 @@ int main() {
         test.open(filename);
         if (!test.good()) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             cerr << "Error: Could not find city_distances.csv in data/ or ../data/" << endl;
 =======
             cerr << "❌ Error: Could not find city_distances.csv in data/ or ../data/" << endl;
 >>>>>>> 24c85d5 (updated the main file and integrated the csv data file into the project structure.)
+=======
+            cout << "Could not find city_distances.csv " << endl;
+>>>>>>> 8b4ad22 (Updated main)
             return 1;
         }
     }
