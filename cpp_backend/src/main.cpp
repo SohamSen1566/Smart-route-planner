@@ -3,10 +3,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Function to load all routes from a CSV file
 void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
     ifstream file(filename);
     if (!file.is_open()) {
-        cerr << "Error: Could not open file " << filename << endl;
+        cout << "Could not open file: " << filename << endl;
         return;
     }
 
@@ -24,7 +25,7 @@ void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
             double distance = stod(distStr);
             rm.addRoute(from, to, distance);
         } catch (...) {
-            cerr << "Warning: Skipped invalid line: " << line << endl;
+            cout << "Skipped invalid line: " << line << endl;
         }
     }
 
@@ -42,7 +43,7 @@ int main() {
         filename = "../data/city_distances.csv";
         test.open(filename);
         if (!test.good()) {
-            cerr << "Error: Could not find city_distances.csv in data/ or ../data/" << endl;
+            cout << "Could not find city_distances.csv " << endl;
             return 1;
         }
     }
