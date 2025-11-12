@@ -2,27 +2,25 @@
 #define ROUTE_MANAGER_HPP
 
 #include <bits/stdc++.h>
-using namespace std;
-
 #include "graph.hpp"
 #include "dijkstra.hpp"
+
+using namespace std;
 
 class RouteManager {
 private:
     Graph graph;
+    unordered_map<string, int> cityToId;
+    unordered_map<int, string> idToCity;
+    int cityCount;
 
 public:
-    // Load graph data from a file (format: u v w per line)
-    bool loadMapData(const string &filename);
+    RouteManager();
 
-    // Compute shortest path between two nodes
-    vector<int> computeRoute(int start, int end);
-
-    // Display the path in a readable format
-    void displayRoute(const vector<int> &path);
-
-    // Export path to an output file
-    void exportRoute(const vector<int> &path, const string &outputFile);
+    void addCity(const string& cityName);
+    void addRoute(const string& from, const string& to, double distance);
+    void displayCities() const;
+    void findShortestRoute(const string& source, const string& destination);
 };
 
 #endif
