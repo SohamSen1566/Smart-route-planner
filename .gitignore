@@ -61,7 +61,6 @@ web_frontend/package-lock.json
 # =========================
 cpp_backend/data/*.bin
 cpp_backend/data/*.dat
-cpp_backend/data/*.csv
 cpp_backend/data/*.json
 cpp_backend/data/*.db
 
