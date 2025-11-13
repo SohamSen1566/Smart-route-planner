@@ -40,7 +40,7 @@ if pop_col:
     print(f"[+] Sorting by population column: '{pop_col}'")
     df = df.sort_values(pop_col, ascending=False).head(TOP_N).reset_index(drop=True)
 else:
-    print("[⚠️] No population column found — using first TOP_N rows as-is.")
+    print("[] No population column found — using first TOP_N rows as-is.")
     df = df.head(TOP_N).reset_index(drop=True)
 
 def get_distance(lat1, lon1, lat2, lon2):

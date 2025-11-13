@@ -3,6 +3,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 491cdbf779a4564d080facc755f77effac74de64
 void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
     ifstream file(filename);
     if (!file.is_open()) {
@@ -11,7 +15,11 @@ void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
     }
 
     string line;
+<<<<<<< HEAD
     getline(file, line); // skip header (from,to,distance)
+=======
+    getline(file, line);
+>>>>>>> 491cdbf779a4564d080facc755f77effac74de64
 
     while (getline(file, line)) {
         stringstream ss(line);
@@ -24,7 +32,11 @@ void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
             double distance = stod(distStr);
             rm.addRoute(from, to, distance);
         } catch (...) {
+<<<<<<< HEAD
             cerr << "Warning: Skipped invalid line: " << line << endl;
+=======
+            cout << "Warning: Skipped invalid line: " << line << endl;
+>>>>>>> 491cdbf779a4564d080facc755f77effac74de64
         }
     }
 
@@ -42,7 +54,11 @@ int main() {
         filename = "../data/city_distances.csv";
         test.open(filename);
         if (!test.good()) {
+<<<<<<< HEAD
             cerr << "Error: Could not find city_distances.csv in data/ or ../data/" << endl;
+=======
+            cout << "Error: Could not find city_distances.csv in data/ or ../data/" << endl;
+>>>>>>> 491cdbf779a4564d080facc755f77effac74de64
             return 1;
         }
     }
