@@ -3,23 +3,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-<<<<<<< HEAD
-=======
+<<<<<<<<< Temporary merge branch 1
+=========
 
->>>>>>> 491cdbf779a4564d080facc755f77effac74de64
+>>>>>>>>> Temporary merge branch 2
 void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
     ifstream file(filename);
     if (!file.is_open()) {
-        cerr << "Error: Could not open file " << filename << endl;
+        cout << "Could not open file: " << filename << endl;
         return;
     }
 
     string line;
-<<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
     getline(file, line); // skip header (from,to,distance)
-=======
+=========
     getline(file, line);
->>>>>>> 491cdbf779a4564d080facc755f77effac74de64
+>>>>>>>>> Temporary merge branch 2
 
     while (getline(file, line)) {
         stringstream ss(line);
@@ -32,11 +32,11 @@ void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
             double distance = stod(distStr);
             rm.addRoute(from, to, distance);
         } catch (...) {
-<<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
             cerr << "Warning: Skipped invalid line: " << line << endl;
-=======
+=========
             cout << "Warning: Skipped invalid line: " << line << endl;
->>>>>>> 491cdbf779a4564d080facc755f77effac74de64
+>>>>>>>>> Temporary merge branch 2
         }
     }
 
@@ -54,11 +54,11 @@ int main() {
         filename = "../data/city_distances.csv";
         test.open(filename);
         if (!test.good()) {
-<<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
             cerr << "Error: Could not find city_distances.csv in data/ or ../data/" << endl;
-=======
+=========
             cout << "Error: Could not find city_distances.csv in data/ or ../data/" << endl;
->>>>>>> 491cdbf779a4564d080facc755f77effac74de64
+>>>>>>>>> Temporary merge branch 2
             return 1;
         }
     }
