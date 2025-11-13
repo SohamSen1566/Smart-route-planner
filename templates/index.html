@@ -7,16 +7,28 @@
 </head>
 <body>
 
-    <h1>SMART ROUTE PLANNER</h1>
+    <div class="container">
 
-    <div class="box">
-        <input id="source" type="text" placeholder="Enter Source City">
-        <input id="destination" type="text" placeholder="Enter Destination City">
-        <button id="findRoute">Find Route</button>
+        <h1>🚗 SMART ROUTE PLANNER</h1>
+
+        <div class="input-section">
+
+            <select id="source">
+                <option value="">Select Source City</option>
+            </select>
+
+            <select id="destination">
+                <option value="">Select Destination City</option>
+            </select>
+
+            <button id="findRoute">Find Route</button>
+        </div>
+
+        <div id="output" class="output-box"></div>
+
     </div>
 
-    <div id="output"></div>
-
     <script src="/static/script.js"></script>
+
 </body>
 </html>
