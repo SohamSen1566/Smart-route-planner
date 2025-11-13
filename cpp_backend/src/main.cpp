@@ -3,14 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-<<<<<<< HEAD
 // Function to load all routes from a CSV file
-=======
-<<<<<<<<< Temporary merge branch 1
-=========
-
->>>>>>>>> Temporary merge branch 2
->>>>>>> ee40eb244ca5c1065b57f67b362f745afa3edbc8
 void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
     ifstream file(filename);
     if (!file.is_open()) {
@@ -32,15 +25,7 @@ void loadRoutesFromCSV(RouteManager &rm, const string &filename) {
             double distance = stod(distStr);
             rm.addRoute(from, to, distance);
         } catch (...) {
-<<<<<<< HEAD
             cout << "Skipped invalid line: " << line << endl;
-=======
-<<<<<<<<< Temporary merge branch 1
-            cerr << "Warning: Skipped invalid line: " << line << endl;
-=========
-            cout << "Warning: Skipped invalid line: " << line << endl;
->>>>>>>>> Temporary merge branch 2
->>>>>>> ee40eb244ca5c1065b57f67b362f745afa3edbc8
         }
     }
 
@@ -58,15 +43,7 @@ int main() {
         filename = "../data/city_distances.csv";
         test.open(filename);
         if (!test.good()) {
-<<<<<<< HEAD
             cout << "Could not find city_distances.csv " << endl;
-=======
-<<<<<<<<< Temporary merge branch 1
-            cerr << "Error: Could not find city_distances.csv in data/ or ../data/" << endl;
-=========
-            cout << "Error: Could not find city_distances.csv in data/ or ../data/" << endl;
->>>>>>>>> Temporary merge branch 2
->>>>>>> ee40eb244ca5c1065b57f67b362f745afa3edbc8
             return 1;
         }
     }
