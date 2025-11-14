@@ -39,13 +39,20 @@ Project Structure:-
 
 
 How to Compile & Run
-1. Compile
-g++ main.cpp graph.cpp dijkstra.cpp route_manager.cpp utils.cpp -o routefinder
+1. Open cpp_backend folder
+cd cpp_backend
 
-2. Run
-./routefinder "Pune" "Mumbai"
+2. Compile
+g++ src/*.cpp -I include -o dijkstra.exe
+
+3. Revisit your Smart-route-planner folder
+cd "path"
+
+4. python app.py
+
+5. visit local host 
 
 Example Output
-Shortest path from Pune to Mumbai:
-pune -> mumbai
-Total distance: 150 km
+Shortest path from Agra to Pune:
+agra -> gwalior -> bhopal -> indore -> nasik -> pune
+Total distance: 1357.96 km
