@@ -1,5 +1,12 @@
 # Smart-route-planner
 
+Group Members :-
+
+Aditya Mahesh Chhajed - B24CM1073
+Vedansh Manish Buchasia - B24CM1066
+Soham Sen - B24EE1076
+Arpit - B24CS1015
+
 City Route Finder – C++ Shortest Path Project :-
 
 A simple and efficient C++ project that finds the shortest route between two cities using Dijkstra’s Algorithm.
