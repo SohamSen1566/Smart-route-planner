@@ -1,8 +1,10 @@
 /* Global */
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    color: #222;
+    background: linear-gradient(135deg, #1e0059, #43005f, #004aad, #001f3f);
+    background-size: 400% 400%;
+    animation: bgShift 15s ease infinite;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,102 +12,119 @@ body {
     margin: 0;
 }
 
-/* Main container */
-.container {
-    background-color: white;
-    padding: 35px 45px;
-    border-radius: 18px;
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
-    width: 420px;
-    text-align: center;
-    animation: fadeIn 0.6s ease-in-out;
+@keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Animation */
-@keyframes fadeIn {
-    from { transform: translateY(15px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+/* Main container */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    padding: 40px 55px;
+    border-radius: 20px;
+    width: 480px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 0 40px rgba(0, 170, 255, 0.4);
+    animation: fadeIn 0.6s ease-in-out;
 }
 
 /* Title */
 h1 {
-    color: #0066cc;
-    font-size: 28px;
-    margin-bottom: 25px;
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
 }
 
-/* Dropdowns and button */
+/* Inputs */
 .input-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
 }
 
 select {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #aaa;
-    border-radius: 8px;
-    background: #f9f9f9;
+    padding: 15px;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.92);
+    color: #222;
+    font-weight: 500;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+    transition: 0.2s ease;
 }
 
+select:hover {
+    border-color: #00ccff;
+    box-shadow: 0 0 15px #00ccff;
+}
+
+/* Button */
 button {
     margin-top: 10px;
-    padding: 12px;
+    padding: 14px;
     font-size: 18px;
-    background-color: #0066cc;
+    background: linear-gradient(135deg, #007bff, #00eaff);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.25s ease;
+    box-shadow: 0 0 15px rgba(0, 220, 255, 0.4);
 }
 
 button:hover {
-    background-color: #004c99;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px #00eaff;
 }
 
 /* Output Box */
 .output-box {
-    margin-top: 25px;
-    padding: 20px 25px;
-    background: #eef6ff;
-    border-left: 8px solid #0077ff;
-    border-radius: 15px;
-    min-height: 80px;
+    margin-top: 28px;
+    padding: 25px 28px;
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.85);  /* brighter now */
+    color: #222;
+    border-radius: 16px;
 
+    border: 2px solid rgba(0, 200, 255, 0.7);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.7);
+
+    min-height: 85px;
     font-size: 18px;
-    text-align: left;
     line-height: 1.6;
-
     animation: fadeIn 0.5s ease;
 }
 
-/* Output Title */
+/* Output title */
 .output-box h3 {
-    margin: 0;
-    padding-bottom: 10px;
-    font-size: 22px;
-    font-weight: 600;
-    color: #0047ab;
     text-align: center;
+    font-size: 23px;
+    color: #0055ff;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
-/* Preformatted route text */
+/* Output pre */
 .output-box pre {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 12px;
+    background: rgba(230, 240, 255, 1);  /* fully solid */
+    padding: 14px;
     font-size: 17px;
-    border-radius: 8px;
-    white-space: pre-wrap;
+    border-radius: 10px;
     font-family: "Consolas", monospace;
+    white-space: pre-wrap;
+    border-left: 4px solid #008cff;
 }
 
 /* Divider */
 .output-divider {
-    margin: 15px 0;
-    border-bottom: 2px dashed #bcd1ff;
+    margin: 16px 0;
+    border-bottom: 2px dashed rgba(0, 100, 255, 0.4);
 }
